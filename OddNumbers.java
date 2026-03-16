@@ -1,44 +1,129 @@
+// import java.util.Scanner;
+
+// public class OddNumbers {
+//     public static void main(String[] args) {
+
+//         Scanner sc = new Scanner(System.in);
+
+//         System.out.print("Enter starting number: ");
+//         int start = sc.nextInt();
+
+//         System.out.print("Enter ending number: ");
+//         int end = sc.nextInt();
+
+//         int minOdd = Integer.MAX_VALUE;
+//         int maxOdd = Integer.MIN_VALUE;
+//         int sum = 0;
+
+//         System.out.println("\nOdd numbers between " + start + " and " + end + ":");
+
+//         for (int i = start; i <= end; i++) {
+//             if (i % 2 != 0) {
+//                 System.out.print(i + " ");
+
+//                 sum += i;
+
+//                 if (i < minOdd) {
+//                     minOdd = i;
+//                 }
+
+//                 if (i > maxOdd) {
+//                     maxOdd = i;
+//                 }
+//             }
+//         }
+
+//         System.out.println("\n\nMinimum odd number: " + minOdd);
+//         System.out.println("Maximum odd number: " + maxOdd);
+//         System.out.println("Sum of odd numbers: " + sum);
+
+//         sc.close();
+//     }
+// }
+
+
+
+
+
+import java.util.Scanner;
 import java.util.ArrayList;
 
 public class OddNumbers {
-
     public static void main(String[] args) {
 
-        ArrayList<Integer> oddList = new ArrayList<>();
+        Scanner sc = new Scanner(System.in);
 
-        // Find all odd numbers between 1 to 50
-        for (int i = 1; i <= 50; i++) {
+        // -----------------------------
+        // ODD NUMBERS (User Input Range)
+        // -----------------------------
+        System.out.print("Enter starting number: ");
+        int start = sc.nextInt();
+
+        System.out.print("Enter ending number: ");
+        int end = sc.nextInt();
+
+        int minOdd = Integer.MAX_VALUE;
+        int maxOdd = Integer.MIN_VALUE;
+        int sumOdd = 0;
+
+        System.out.println("\nOdd numbers between " + start + " and " + end + ":");
+
+        for (int i = start; i <= end; i++) {
             if (i % 2 != 0) {
-                oddList.add(i);
+                System.out.print(i + " ");
+                sumOdd += i;
+
+                if (i < minOdd) {
+                    minOdd = i;
+                }
+
+                if (i > maxOdd) {
+                    maxOdd = i;
+                }
             }
         }
 
-        System.out.println("List of odd numbers between 1 to 50:");
-        System.out.println(oddList);
-        System.out.println();
+        System.out.println("\nMinimum odd number: " + minOdd);
+        System.out.println("Maximum odd number: " + maxOdd);
+        System.out.println("Sum of odd numbers: " + sumOdd);
 
-        // Three minimum odd numbers
-        System.out.println("Three minimum odd numbers:");
-        for (int i = 0; i < 3; i++) {
-            System.out.println(oddList.get(i));
+        // =====================================================
+        // EVEN NUMBERS (1 to 50)
+        // =====================================================
+        System.out.println("\nEven numbers between 1 and 50:");
+
+        ArrayList<Integer> evenList = new ArrayList<>();
+        int sumEven = 0;
+
+        for (int i = 1; i <= 50; i++) {
+            if (i % 2 == 0) {
+                evenList.add(i);
+                sumEven += i;
+            }
         }
-        System.out.println();
 
-        // Three maximum odd numbers
-        System.out.println("Three maximum odd numbers:");
-        for (int i = oddList.size() - 3; i < oddList.size(); i++) {
-            System.out.println(oddList.get(i));
+        // Print even numbers
+        for (int num : evenList) {
+            System.out.print(num + " ");
         }
-        System.out.println();
 
-        // Calculate average of odd numbers
-        int sum = 0;
-        for (int num : oddList) {
-            sum += num;
-        }
-        double average = (double) sum / oddList.size();
+        // Three minimum even numbers
+        System.out.println("\nThree minimum even numbers: "
+                + evenList.get(0) + ", "
+                + evenList.get(1) + ", "
+                + evenList.get(2));
 
-        System.out.println("Total sum of odd numbers: " + sum);
-        System.out.println("Average of odd numbers between 1 and 50: " + average);
+        // Three maximum even numbers
+        int size = evenList.size();
+        System.out.println("Three maximum even numbers: "
+                + evenList.get(size - 3) + ", "
+                + evenList.get(size - 2) + ", "
+                + evenList.get(size - 1));
+
+        // Average of even numbers
+        double averageEven = (double) sumEven / evenList.size();
+        System.out.println("Average of even numbers: " + averageEven);
+
+        sc.close();
     }
 }
