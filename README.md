@@ -12,15 +12,15 @@
 </tr>
 
 <tr>
-<td>Vency Radadiya</td>
-<td>202504104610047</td>
-<td>Set B</td>
+<td>Gauswami Riya </td>
+<td>202504104610052</td>
+<td>Set A</td>
 </tr>
 
 <tr>
-<td>Mosin</td>
-<td>202504104610044</td>
-<td>Set A</td>
+<td>Mirza Hamza</td>
+<td>202504104610051</td>
+<td>Set B</td>
 </tr>
 
 </table>
@@ -60,4 +60,3 @@ It includes Python programs, GitHub operations, and proper documentation for all
 </ul>
 
 <hr>
-
